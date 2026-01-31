@@ -130,14 +130,12 @@ function calcola() {
     let due = parseInt(document.getElementById("due").value) || 0;
     let notte = parseInt(document.getElementById("tre").value) || 0;
 
-    let ore_lavorate_m = m * ore_m;
-    let ore_lavorate_C = C * ore_C;
-    let ore_lavorate_H = H * ore_H;
-    let ore_lavorate_due = due * ore_due;
-    let ore_lavorate_notte = notte * ore_notte;
-
-    // QUI INSERIRAI TU LA FORMULA REALE
-    let totale = ore_lavorate_m + ore_lavorate_C + ore_lavorate_H + ore_lavorate_due + ore_lavorate_notte;
+    let totale = 
+        (m * ore_m) +
+        (C * ore_C) +
+        (H * ore_H) +
+        (due * ore_due) +
+        (tre * ore_notte);
 
     document.getElementById("risultato").innerText = totale;
 }
