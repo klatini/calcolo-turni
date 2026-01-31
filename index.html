@@ -118,14 +118,26 @@
 <script>
 function calcola() {
 
+    const ore_m = 7;
+    const ore_C = 6;
+    const ore_H = 6;
+    const ore_due = 8;
+    const ore_notte = 9;
+
     let m = parseInt(document.getElementById("m").value) || 0;
     let C = parseInt(document.getElementById("C").value) || 0;
     let H = parseInt(document.getElementById("H").value) || 0;
     let due = parseInt(document.getElementById("due").value) || 0;
-    let tre = parseInt(document.getElementById("tre").value) || 0;
+    let notte = parseInt(document.getElementById("tre").value) || 0;
+
+    let ore_lavorate_m = m * ore_m;
+    let ore_lavorate_C = C * ore_C;
+    let ore_lavorate_H = H * ore_H;
+    let ore_lavorate_due = due * ore_due;
+    let ore_lavorate_notte = notte * ore_notte;
 
     // QUI INSERIRAI TU LA FORMULA REALE
-    let totale = m + C + H + due + tre;
+    let totale = ore_lavorate_m + ore_lavorate_C + ore_lavorate_H + ore_lavorate_due + ore_lavorate_notte;
 
     document.getElementById("risultato").innerText = totale;
 }
