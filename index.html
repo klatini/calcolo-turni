@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calcolo Ore Turni Ospedale</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .result {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    .note {
+        font-size: 14px;
+        color: #666;
+        margin-top: 10px;
+        text-align: center;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Calcolo Ore Lavorate</h2>
+
+    <form onsubmit="calcola(); return false;">
+
+        <label>m – Turni 7:00-14:00</label>
+        <input type="number" id="m" min="0" value="0">
+
+        <label>C – Altro tipo turno C</label>
+        <input type="number" id="C" min="0" value="0">
+
+        <label>H – Altro tipo turno H</label>
+        <input type="number" id="H" min="0" value="0">
+
+        <label>Turno tipo 2</label>
+        <input type="number" id="due" min="0" value="0">
+
+        <label>Turno tipo 3</label>
+        <input type="number" id="tre" min="0" value="0">
+
+        <button type="submit">CALCOLA</button>
+
+    </form>
+
+    <div class="result">
+        Totale ore: <span id="risultato">0</span>
+    </div>
+
+    <div class="note">
+        Inserire solo numeri interi positivi
+    </div>
+
+</div>
+
+<script>
+function calcola() {
+
+    let m = parseInt(document.getElementById("m").value) || 0;
+    let C = parseInt(document.getElementById("C").value) || 0;
+    let H = parseInt(document.getElementById("H").value) || 0;
+    let due = parseInt(document.getElementById("due").value) || 0;
+    let tre = parseInt(document.getElementById("tre").value) || 0;
+
+    // QUI INSERIRAI TU LA FORMULA REALE
+    let totale = m + C + H + due + tre;
+
+    document.getElementById("risultato").innerText = totale;
+}
+</script>
+
+</body>
+</html>
